@@ -1,6 +1,7 @@
 import React from "react";
 
-type RatingProps = { value: number };
+type ValueTypeRating = 0 | 1 | 2 | 3 | 4 | 5
+type RatingProps = { value: ValueTypeRating };
 
 export function Rating(props: RatingProps) {
     console.log("Rating rendering")
