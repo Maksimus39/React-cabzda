@@ -1,6 +1,8 @@
 import React from "react";
 
-export function Rating(props: any) {
+type RatingProps = { value: number };
+
+export function Rating(props: RatingProps) {
     console.log("Rating rendering")
     if (props.value === 1) {
         return (

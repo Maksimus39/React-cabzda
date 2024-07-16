@@ -13,8 +13,8 @@ function App() {
             <AppTitle title={" This is App component"}/>
             <AppTitle title={" This is my friends"}/>
 
-            <Accordion title={"Title-11"}/>
-            <Accordion title={"Title-2"}/>
+            <Accordion titleValue={"---Menu---"}/>
+            <Accordion titleValue={"--Users--"}/>
 
             <Rating value={0}/>
             <Rating value={1}/>
@@ -25,8 +25,8 @@ function App() {
         </div>
     );
 }
-
-function AppTitle(props: any) {
+type AppTitleProps = {title: string};
+function AppTitle(props: AppTitleProps) {
     //debugger
     console.log("AppTitle rendering")
     return (
