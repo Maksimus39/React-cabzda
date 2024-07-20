@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export function OnOff(): React.ReactElement {
+export function UncontrolledOnOff(): React.ReactElement {
 
     console.log('onOff rendering')
 
