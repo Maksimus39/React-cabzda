@@ -1,11 +1,19 @@
 import React from 'react';
 import './App.css';
 import {Accordion} from "./components/accordion/Accordion";
-import {Rating} from "./components/rating/Rating";
-import {OnOff} from "./components/onOff/onOff";import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {Rating, ValueTypeRating} from "./components/rating/Rating";
+import {UncontrolledOnOff} from "./components/onOff/UncontrolledOnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/uncontrollingRating/UncontrolledRating";
+import {OnOff} from "./components/onOff/OnOff";
 
 function App() {
+
     console.log("App rendering")
+    const [ratingValue, setRatingValue] = React.useState<ValueTypeRating>(1)
+    const [accordionCollapsed, setAccordionCollapsed] = React.useState<boolean>(false)
+    const [onOff, setOnOff] = React.useState<boolean>(false)
+
     return (
         <div className="App">
             <img
@@ -14,22 +22,25 @@ function App() {
             <AppTitle title={" This is App component"}/>
             <AppTitle title={" This is my friends"}/>
 
-            <Accordion titleValue={"---Menu---"} collapsed={true}/>
-            <Accordion titleValue={"--Users--"} collapsed={false}/>
+            <Accordion titleValue={"---Menu---"} value={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <Accordion titleValue={"--Users--"} value={accordionCollapsed} onClick={setAccordionCollapsed}/>
+
+
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+
+            <UncontrolledOnOff/>
+            <OnOff value={onOff} onClick={setOnOff}/>
+
 
             <UncontrolledAccordion titleValue={"UncontrolledMenu"}/>
-            <UncontrolledAccordion titleValue={"UncontrolledUsers"} />
+            <UncontrolledAccordion titleValue={"UncontrolledUsers"}/>
 
-
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
-
-
-            <OnOff/>
+            <UncontrolledRating/>
         </div>
     );
 }
