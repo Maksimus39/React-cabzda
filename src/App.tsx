@@ -27,11 +27,6 @@ function App() {
 
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
 
             <UncontrolledOnOff/>
             <OnOff value={onOff} onClick={setOnOff}/>
@@ -48,7 +43,6 @@ function App() {
 type AppTitleProps = { title: string };
 
 function AppTitle(props: AppTitleProps) {
-    //debugger
     console.log("AppTitle rendering")
     return (
         <div>
