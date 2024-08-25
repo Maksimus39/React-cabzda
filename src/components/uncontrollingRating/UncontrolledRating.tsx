@@ -29,5 +29,5 @@ function Star({selected, setValue}: StarProps) {
         setValue()
     }
 
-    return <span onClick={() => starValue()}>{selected ? <b>star </b> : "star"}</span>
+    return <span onClick={() => starValue()}>{selected ? <b>star </b> : "star "}</span>
 }
