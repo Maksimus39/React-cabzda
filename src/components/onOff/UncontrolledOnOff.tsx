@@ -3,7 +3,7 @@ import React from 'react';
 
 export function UncontrolledOnOff(): React.ReactElement {
 
-    console.log('onOff rendering')
+    console.log('UncontrolledOnOff rendering')
 
     const [on, setOn] = React.useState(true);
     console.log('on: ' + on)
@@ -11,7 +11,6 @@ export function UncontrolledOnOff(): React.ReactElement {
     function onClickHeader() {
         setOn(true)
     }
-
     function offClickHeader() {
         setOn(false)
     }
