@@ -22,8 +22,19 @@ function App() {
             <AppTitle title={" This is App component"}/>
             <AppTitle title={" This is my friends"}/>
 
-            <Accordion titleValue={"---Menu---"} value={accordionCollapsed} onClick={setAccordionCollapsed}/>
-            <Accordion titleValue={"--Users--"} value={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            <Accordion titleValue={"---Menu---"}
+                       value={accordionCollapsed}
+                       onChange={setAccordionCollapsed}
+                       items={[]}
+                       onClick={()=>{}}
+
+            />
+            <Accordion titleValue={"--Users--"}
+                       value={accordionCollapsed}
+                       onChange={setAccordionCollapsed}
+                       items={[]}
+                      onClick={()=>{}}
+            />
 
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
