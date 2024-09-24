@@ -1,17 +1,44 @@
-import React from "react";
+import React, {useReducer} from "react";
 
 type AccordionProps = {
     titleValue: string
 }
+// ----------------------------------------------------------------------------------------------------------------
+const TOGGLE_CONSTANT = "TOGGLE-COLLAPSED"
 
+type ActionType = {
+    type: string,
+}
+
+
+const reducer = (state: boolean, action: ActionType) => {
+    switch (action.type) {
+        case TOGGLE_CONSTANT:
+            return !state
+    }
+
+
+    // if (action.type === TOGGLE_CONSTANT) {
+    //     return !state
+    // }
+    return state
+}
+
+
+// --------------------------------------------------------------------------------------------------------------
 export function UncontrolledAccordion(props: AccordionProps) {
     //debugger
     console.log("Accordion rendering")
-    const [collapsed, setCollapsed] = React.useState(false)
+    // const [collapsed, setCollapsed] = React.useState(false)
+    const [collapsed, dispatch] = useReducer(reducer, false)
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue} setCollapsed={setCollapsed} collapsed={collapsed}/>
+            <AccordionTitle title={props.titleValue}
+                            onClick={() => {
+                                dispatch({type: TOGGLE_CONSTANT})
+                            }}
+            />
             {collapsed && <AccordionBody/>}
         </div>
     )
@@ -19,8 +46,7 @@ export function UncontrolledAccordion(props: AccordionProps) {
 
 type AccordionTitleProps = {
     title: string
-    setCollapsed: (value: boolean) => void
-    collapsed: boolean
+    onClick: () => void
 }
 
 function AccordionTitle(props: AccordionTitleProps) {
@@ -28,10 +54,10 @@ function AccordionTitle(props: AccordionTitleProps) {
     console.log("AccordionTitle rendering");
 
     function accordionCollapsedHandler() {
-        props.setCollapsed(!props.collapsed)
+        props.onClick()
     }
 
-    return <h3 onClick={accordionCollapsedHandler}>{props.title}</h3>
+    return <h3 onClick={accordionCollapsedHandler}>dispatch: -- {props.title} -- </h3>
 }
 
 
