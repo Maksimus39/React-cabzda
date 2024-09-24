@@ -1,5 +1,4 @@
 import React from "react";
-import {ValueTypeRating} from "../rating/Rating";
 
 type ItemType = {
     title: string,
@@ -12,16 +11,15 @@ type SelectProps = {
     items: ItemType[]
 };
 
-export function Rating(props: SelectProps) {
+export function Select(props: SelectProps) {
+    const filteredItems = props.items.filter(item => item.value === props.value);
 
     return (
         <div>
             <div>
-                {props.items.filter(it=>it.)}
-
-
+                {filteredItems.map(item => <div key={item.value}>{item.title}</div>)}
             </div>
-            {props.items.map(i=><div>{i.title}</div>)}
+            {props.items.map(item => <div key={item.value}>{item.title}</div>)}
         </div>
     )
 }

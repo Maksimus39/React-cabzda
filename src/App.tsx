@@ -6,6 +6,7 @@ import {UncontrolledOnOff} from "./components/uncontrolledOnOff/UncontrolledOnOf
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/uncontrollingRating/UncontrolledRating";
 import {OnOff} from "./components/onOff/OnOff";
+import {Select} from "./components/select/Select";
 
 function App() {
 
@@ -47,6 +48,8 @@ function App() {
             <UncontrolledAccordion titleValue={"UncontrolledUsers"}/>
 
             <UncontrolledRating/>
+
+            {/*<Select value={} onChange={} items={}/>*/}
         </div>
     );
 }
